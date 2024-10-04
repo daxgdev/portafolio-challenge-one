@@ -4,6 +4,7 @@
   --font-color: #f0f0f0;
   --first-color: #0e0e0f;
   --second-color: rgba(255, 255, 255, 0.1);
+  --third-color: #1a1a1a;
   --gradient: linear-gradient(45deg, #c23dff, #673dff, #c23dff, #773dff);
   --header-height: 70px;
 }
@@ -23,15 +24,25 @@ body {
   font-size: var(--font-size);
 }
 
+p {
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
 a {
   text-decoration: none;
   color: inherit;
+}
+
+h2 {
+  font-size: 1.875rem;
 }
 
 header {
   border-bottom: 1px solid transparent;
   position: sticky;
   top: 0;
+  z-index: 20;
   background-color: rgba(14, 14, 15, 0.75);
   backdrop-filter: blur(5px);
   transition: 300ms ease border-bottom-color;
@@ -131,10 +142,8 @@ header {
 }
 
 main {
-  padding-inline: 16px;
-
   .hero-section {
-    padding-block: 16px;
+    padding: 16px 16px 64px;
 
     .photo-container {
       width: 120px;
@@ -196,5 +205,37 @@ main {
         }
       }
     }
+  }
+
+  .about-section {
+    padding: 64px 16px;
+    position: relative;
+    
+    .container > * {
+      text-align: end;
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .signature-container {
+        width: 200px;
+        margin-top: 1rem;
+        align-self: flex-end;
+      }
+    }
+  }
+  .about-section::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    transform: skewY(-5deg);
+    background-image: linear-gradient(
+      45deg,
+      var(--third-color),
+      var(--third-color)
+    );
   }
 }
