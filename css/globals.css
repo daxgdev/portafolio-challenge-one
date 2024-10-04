@@ -1,0 +1,130 @@
+:root {
+  --font: 'Afacad Flux', system-ui;
+  --font-size: 1.063rem;
+  --font-color: #f0f0f0;
+  --first-color: #0e0e0f;
+  --second-color: rgba(255, 255, 255, 0.1);
+  --header-height: 70px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font);
+  background-color: var(--first-color);
+  color: var(--font-color);
+}
+
+body {
+  margin: 0;
+  font-size: var(--font-size);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  border-bottom: 1px solid transparent;
+  position: sticky;
+  top: 0;
+  background-color: rgba(14, 14, 15, 0.75);
+  backdrop-filter: blur(5px);
+  transition: 300ms ease border-bottom-color;
+
+  .header-container {
+    max-width: 1300px;
+    padding-inline: 16px;
+    height: var(--header-height);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      .meteor {
+        width: 25px;
+        height: 25px;
+        fill: var(--font-color);
+      }
+    }
+
+    .dropdown-button {
+      padding: 8px 14px;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: inherit;
+      font-weight: bold;
+      font-size: inherit;
+      background-color: var(--second-color);
+      color: inherit;
+      border-radius: 8px;
+      cursor: pointer;
+
+      svg,
+      span {
+        pointer-events: none;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+        margin-top: 4px;
+        fill: var(--font-color);
+        transition: 200ms ease rotate;
+      }
+    }
+    .dropdown-button.active > svg {
+      rotate: 180deg;
+    }
+
+    nav {
+      width: 150px;
+      margin: 0;
+      padding: 8px;
+      border: 1px solid var(--second-color);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: fixed;
+      right: 8px;
+      top: calc(var(--header-height) + 8px);
+      background-color: var(--first-color);
+      border-radius: 8px;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: 300ms ease transform, 300ms ease opacity;
+
+      a:last-child {
+        display: none;
+        font-weight: bold;
+      }
+      a {
+        padding: 0.5rem;
+        border-radius: 4px;
+        transition: 300ms ease background-color;
+      }
+      a:hover {
+        background-color: var(--second-color);
+      }
+    }
+    nav.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
+.header-border {
+  border-bottom-color: var(--second-color);
+}
