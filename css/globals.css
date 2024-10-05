@@ -6,6 +6,7 @@
   --second-color: rgba(255, 255, 255, 0.1);
   --third-color: #1a1a1a;
   --gradient: linear-gradient(45deg, #c23dff, #673dff, #c23dff, #773dff);
+  --skew-angle: 4deg;
   --header-height: 70px;
 }
 
@@ -142,6 +143,16 @@ header {
 }
 
 main {
+  section {
+    padding: 64px 16px;
+
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+  }
+
   .hero-section {
     padding: 16px 16px 64px;
 
@@ -159,9 +170,6 @@ main {
       }
     }
 
-    .container > * {
-      margin: 0;
-    }
     .container {
       display: flex;
       flex-direction: column;
@@ -208,13 +216,8 @@ main {
   }
 
   .about-section {
-    padding: 64px 16px;
     position: relative;
-    
-    .container > * {
-      text-align: end;
-      margin: 0;
-    }
+
     .container {
       display: flex;
       flex-direction: column;
@@ -231,11 +234,49 @@ main {
     position: absolute;
     z-index: -1;
     inset: 0;
-    transform: skewY(-5deg);
-    background-image: linear-gradient(
-      45deg,
-      var(--third-color),
-      var(--third-color)
-    );
+    transform: skewY(var(--skew-angle));
+    background: var(--third-color);
+  }
+
+  .skills-section {
+    .container {
+      .title {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        .skill {
+          height: 120px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 8px;
+          position: relative;
+          background-color: var(--third-color);
+        }
+        .skill::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          background-image: var(--gradient);
+          transform: translate(3px, 3px);
+        }
+        .skill-icon {
+          width: 40px;
+          height: 40px;
+          object-fit: scale-down;
+        }        
+        .skill-name {
+          text-align: center;
+        }
+      }
+    }
   }
 }
