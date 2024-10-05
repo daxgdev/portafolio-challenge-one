@@ -5,6 +5,7 @@
   --first-color: #0e0e0f;
   --second-color: rgba(255, 255, 255, 0.1);
   --third-color: #1a1a1a;
+  --fourth-color: #2b2b2b;
   --gradient: linear-gradient(45deg, #c23dff, #673dff, #c23dff, #773dff);
   --skew-angle: 4deg;
   --header-height: 70px;
@@ -238,45 +239,68 @@ main {
     background: var(--third-color);
   }
 
-  .skills-section {
-    .container {
-      .title {
-        text-align: center;
-        margin-bottom: 32px;
-      }
+  .skills-section > .container,
+  .hobbies-section > .container {
+    max-width: 620px;
+    margin-inline: auto;
+  }
+  .skills-section .title,
+  .hobbies-section .title {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .skills,
+  .hobbies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  .skill,
+  .hobbie {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    background-color: var(--third-color);
+  }
+  .skill::after,
+  .hobbie::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: var(--gradient);
+    transform: translate(5px, 5px);
+  }
+  .skill-icon,
+  .hobbie-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: scale-down;
+  }
+  .skill-name,
+  .hobbie-name {
+    text-align: center;
+  }
 
-      .skills {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-
-        .skill {
-          height: 120px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          gap: 8px;
-          position: relative;
-          background-color: var(--third-color);
-        }
-        .skill::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          z-index: -1;
-          background-image: var(--gradient);
-          transform: translate(3px, 3px);
-        }
-        .skill-icon {
-          width: 40px;
-          height: 40px;
-          object-fit: scale-down;
-        }        
-        .skill-name {
-          text-align: center;
-        }
-      }
-    }
+  .hobbies-section {
+    position: relative;
+  }
+  .hobbies-section::after {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    transform: skewY(calc(var(--skew-angle) * -1));
+    background: var(--third-color);
+  }
+  .hobbie {
+    background-color: var(--fourth-color);
+  }
+  .hobbie::after {
+    transform: translate(-5px, 5px);
   }
 }
