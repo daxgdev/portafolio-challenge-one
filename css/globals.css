@@ -247,11 +247,6 @@ main {
     background: var(--third-color);
   }
 
-  .skills-section > .container,
-  .hobbies-section > .container {
-    max-width: 620px;
-    margin-inline: auto;
-  }
   .skills-section .title,
   .hobbies-section .title {
     text-align: center;
@@ -293,7 +288,6 @@ main {
   .hobbie-name {
     text-align: center;
   }
-
   .hobbies-section {
     position: relative;
   }
@@ -310,5 +304,32 @@ main {
   }
   .hobbie::after {
     transform: translate(-5px, 5px);
+  }
+
+  .education-section .title {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .education {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .education-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .education-item-logo {
+    height: 120px;
+    display: grid;
+    place-content: center;
+    background-color: var(--third-color);
+  }
+  .education-item-logo > img {
+    width: 100px;
+    height: 70px;
+    object-fit: scale-down;
   }
 }
