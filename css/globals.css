@@ -6,6 +6,8 @@
   --second-color: rgba(255, 255, 255, 0.1);
   --third-color: #1a1a1a;
   --fourth-color: #2b2b2b;
+  --fifth-color: #673dff;
+  --error-color: #ee6969;
   --gradient: linear-gradient(45deg, #c23dff, #673dff, #773dff);
   --skew-angle: 4deg;
   --header-height: 70px;
@@ -405,7 +407,89 @@ main {
     width: calc(117% + 1.3px);
     height: 70px;
   }
-  .wave .shape-fill {
-    fill: #0e0e0f;
+  .experience-section > .wave .shape-fill {
+    fill: var(--first-color);
+  }
+
+  .contact-section {
+    padding-top: 80px;
+    position: relative;
+  }
+  .contact-section .title {
+    margin-bottom: 8px;
+  }
+  .contact-form {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-form > label,
+  .contact-form > input,
+  .contact-form > textarea {
+    margin-bottom: 8px;
+  }
+  .contact-form > label {
+    font-weight: 200;
+  }
+  .contact-form > input,
+  .contact-form > textarea {
+    padding: 16px;
+    border: 3px solid transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: var(--third-color);
+    outline: 1px solid transparent;
+    transition: 300ms ease outline, 300ms ease border-color;
+  }
+  .contact-form > input.error,
+  .contact-form > textarea.error {
+    outline: 1px solid var(--error-color);
+  }
+  .contact-form > input:focus,
+  .contact-form > textarea:focus {
+    border-color: var(--second-color);
+  }
+  .contact-form > textarea {
+    height: 200px;
+    resize: none;
+  }
+  .contact-form > .error-message {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 200;
+    color: var(--error-color);
+    opacity: 0;
+  }
+  .contact-form > .error-message > img {
+    width: 15px;
+    height: 15px;
+  }
+  .send-form {
+    width: 160px;
+    height: 40px;
+    margin-top: 16px;
+    border: 2px solid transparent;
+    display: grid;
+    place-content: center;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: inherit;
+    color: inherit;
+    background-color: var(--fifth-color);
+    outline: none;
+    cursor: pointer;
+  }
+  .send-form:focus {
+    border-color: var(--font-color);
+  }
+
+  .contact-section > .wave {
+    transform: rotateY(180deg);
+  }
+  .contact-section > .wave .shape-fill {
+    fill: var(--third-color);
   }
 }
