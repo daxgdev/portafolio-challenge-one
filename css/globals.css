@@ -6,7 +6,7 @@
   --second-color: rgba(255, 255, 255, 0.1);
   --third-color: #1a1a1a;
   --fourth-color: #2b2b2b;
-  --gradient: linear-gradient(45deg, #c23dff, #673dff, #c23dff, #773dff);
+  --gradient: linear-gradient(45deg, #c23dff, #673dff, #773dff);
   --skew-angle: 4deg;
   --header-height: 70px;
 }
