@@ -129,7 +129,7 @@ header {
         transition: 300ms ease background-color;
       }
       a:hover {
-        background-color: var(--second-color);
+        background-color: var(--fourth-color);
       }
     }
     nav.active {
