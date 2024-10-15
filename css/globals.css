@@ -148,7 +148,7 @@ header {
 
 main {
   section {
-    padding: 64px 16px;
+    padding: 70px 16px;
 
     & > .container {
       max-width: 620px;
@@ -503,5 +503,24 @@ main {
   }
   .contact-section > .wave .shape-fill {
     fill: var(--third-color);
+  }
+}
+
+footer {
+  padding: 20px 16px;
+  border-top: 1px solid var(--second-color);
+  display: grid;
+  place-content: center;
+  background-color: var(--third-color);
+
+  p {
+    margin: 0;
+  }
+  .profile {
+    font-weight: bold;
+    background-image: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
