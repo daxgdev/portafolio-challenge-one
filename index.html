@@ -434,53 +434,42 @@
             Complete el siguiente formulario y me pondré en contacto con usted
             lo antes posible.
           </p>
-          <form action="" class="contact-form">
+          <form class="contact-form">
             <label for="name">Nombre</label>
             <input
               type="text"
               name="name"
-              id="name"
+              id="nombre"
               placeholder="Ingresa tu nombre"
             />
-            <span class="error-message">
-              <img src="assets/xmark-solid.svg" alt="Ícono de X" />
-              Ingresa tu nombre correctamente
-            </span>
+            <span class="error-message"></span>
 
             <label for="email">Correo electrónico</label>
             <input
               type="email"
               name="email"
-              id="email"
+              id="correo"
               placeholder="Ingresa tu correo electrónico"
             />
-            <span class="error-message">
-              <img src="assets/xmark-solid.svg" alt="Ícono de X" />
-              Ingresa tu nombre correctamente
-            </span>
+            <span class="error-message"></span>
 
             <label for="subject">Asunto</label>
             <input
               type="text"
               name="subject"
-              id="subject"
+              id="asunto"
               placeholder="Asunto del mensaje"
             />
-            <span class="error-message">
-              <img src="assets/xmark-solid.svg" alt="Ícono de X" />
-              Ingresa tu nombre correctamente
-            </span>
+            <span class="error-message"></span>
 
             <label for="message">Mensaje</label>
             <textarea
               name="message"
-              id="message"
+              id="mensaje"
+              maxlength="300"
               placeholder="Ingresa tu mensaje (max. 300 caracteres)"
             ></textarea>
-            <span class="error-message">
-              <img src="assets/xmark-solid.svg" alt="Ícono de X" />
-              Ingresa tu nombre correctamente
-            </span>
+            <span class="error-message"></span>
 
             <button type="submit" class="send-form">Enviar mensaje</button>
           </form>

@@ -8,6 +8,7 @@
   --fourth-color: #2b2b2b;
   --fifth-color: #673dff;
   --error-color: #ee6969;
+  --success-color: #4cb478;
   --gradient: linear-gradient(45deg, #c23dff, #673dff, #773dff);
   --skew-angle: 4deg;
   --header-height: 70px;
@@ -455,13 +456,17 @@ main {
     resize: none;
   }
   .contact-form > .error-message {
-    margin-bottom: 8px;
+    height: 23px;
     display: flex;
     align-items: center;
     gap: 10px;
     font-weight: 200;
     color: var(--error-color);
     opacity: 0;
+    transition: opacity 200ms ease;
+  }
+  .contact-form > .error-message.active {
+    opacity: 1;
   }
   .contact-form > .error-message > img {
     width: 15px;
@@ -481,6 +486,13 @@ main {
     background-color: var(--fifth-color);
     outline: none;
     cursor: pointer;
+    transition: background-color 300ms ease;
+  }
+  .send-form.error {
+    background-color: var(--error-color);
+  }
+  .send-form.success {
+    background-color: var(--success-color);
   }
   .send-form:focus {
     border-color: var(--font-color);
