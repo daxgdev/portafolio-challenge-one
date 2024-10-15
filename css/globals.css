@@ -486,7 +486,11 @@ main {
     background-color: var(--fifth-color);
     outline: none;
     cursor: pointer;
-    transition: background-color 300ms ease;
+    transition: all 300ms ease;
+  }
+  .send-form:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: var(--font-color) 5px 5px;
   }
   .send-form.error {
     background-color: var(--error-color);
