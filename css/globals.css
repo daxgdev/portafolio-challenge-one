@@ -180,6 +180,10 @@ main {
         object-fit: cover;
       }
     }
+    
+    .overview > p {
+      margin-block: 1rem;
+    }
 
     .container {
       max-width: auto;
