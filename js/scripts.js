@@ -36,7 +36,7 @@ const validate = (type) => {
 
   // Validaciones de los campos
   if (!value) {
-    $error.innerHTML = `<img src="assets/xmark-solid.svg" alt="Ícono de X" /> Debes ingresar un ${type}`
+    $error.innerHTML = `<img src="assets/icons/xmark-solid.svg" alt="Ícono de X" /> Debes ingresar un ${type}`
     if (!$error.classList.contains('active')) $error.classList.add('active')
     if (!$input.classList.contains('error')) $input.classList.add('error')
   } else {
