@@ -22,6 +22,7 @@ html {
   font-family: var(--font);
   background-color: var(--first-color);
   color: var(--font-color);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -150,6 +151,10 @@ main {
   section {
     padding: 70px 16px;
 
+    .title {
+      scroll-margin: calc(var(--header-height) + 20px);
+    }
+
     & > .container {
       max-width: 620px;
       margin-inline: auto;
@@ -180,7 +185,7 @@ main {
         object-fit: cover;
       }
     }
-    
+
     .overview > p {
       margin-block: 1rem;
     }
