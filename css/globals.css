@@ -359,8 +359,8 @@ main {
     text-align: center;
   }
   .experience {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 32px;
   }
   .experience-item {
