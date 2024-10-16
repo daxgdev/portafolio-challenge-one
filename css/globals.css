@@ -162,6 +162,7 @@ main {
     h1,
     h2,
     h3,
+    h4,
     p {
       margin: 0;
     }
@@ -340,9 +341,12 @@ main {
     background-color: var(--third-color);
   }
   .education-item-logo > img {
-    width: 100px;
+    width: 180px;
     height: 70px;
     object-fit: scale-down;
+  }
+  .education-item-institution {
+    font-weight: bold;
   }
 
   .experience-section {
