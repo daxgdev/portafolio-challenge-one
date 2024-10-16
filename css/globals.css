@@ -168,7 +168,7 @@ main {
   }
 
   .hero-section {
-    max-width: 620px;
+    max-width: calc(620px + 32px);
     margin-inline: auto;
     padding: 16px 16px 64px;
 
