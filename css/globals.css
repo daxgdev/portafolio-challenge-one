@@ -156,7 +156,7 @@ main {
     }
 
     & > .container {
-      max-width: 620px;
+      max-width: 1300px;
       margin-inline: auto;
     }
     h1,
@@ -169,7 +169,7 @@ main {
   }
 
   .hero-section {
-    max-width: calc(620px + 32px);
+    max-width: calc(1300px + 32px);
     margin-inline: auto;
     padding: 16px 16px 64px;
 
@@ -192,7 +192,7 @@ main {
     }
 
     .container {
-      max-width: auto;
+      max-width: unset;
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -375,8 +375,8 @@ main {
   }
   .experience-item-preview {
     width: 100%;
-    max-width: 300px;
-    height: 170px;
+    max-width: 330px;
+    height: 200px;
     margin-inline: auto;
     display: block;
     object-fit: cover;

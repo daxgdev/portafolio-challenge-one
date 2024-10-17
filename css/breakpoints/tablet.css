@@ -1,0 +1,79 @@
+:root {
+  --font-size: 1.188rem;
+}
+
+header {
+  .header-container {
+    padding-inline: 32px;
+  }
+  .header-container > nav {
+    top: calc(var(--header-height) + 16px);
+    right: 32px;
+  }
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+h3 {
+  font-size: 1.625rem;
+}
+
+main {
+  section {
+    padding: 90px 32px;
+  }
+
+  .hero-section {
+    padding: 32px 32px 90px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 32px;
+
+    .photo-container {
+      min-width: 160px;
+      min-height: 160px;
+      align-self: center;
+    }
+
+    .container > .title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .skills,
+  .hobbies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .skill,
+  .hobbie {
+    height: 150px;
+  }
+
+  .education {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .education-item-logo {
+    height: 170px;
+  }
+  .education-item-logo > img {
+    height: 80px;
+  }
+  .education-item-title {
+    font-size: 1.438rem;
+  }
+
+  .experience-section {
+    padding-top: 90px;
+  }
+  .experience-item-preview {
+    max-width: 768px;
+    height: 432px;
+  }
+
+  .contact-section {
+    padding-top: 90px;
+  }
+}
