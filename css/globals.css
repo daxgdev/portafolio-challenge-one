@@ -123,12 +123,15 @@ header {
       pointer-events: none;
       transition: 300ms ease transform, 300ms ease opacity;
 
-      a:last-child {
+      span.email {
         display: none;
         font-weight: bold;
       }
-      a {
+      a,
+      span.email {
         padding: 0.5rem;
+      }
+      a {
         border-radius: 4px;
         transition: 300ms ease background-color;
       }
@@ -365,12 +368,9 @@ main {
   }
   .experience-item {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
   }
   .item-preview-container {
-    margin: 0;
+    margin: 0 0 10px;
     background-color: var(--first-color);
   }
   .experience-item-preview {
@@ -380,6 +380,11 @@ main {
     margin-inline: auto;
     display: block;
     object-fit: cover;
+  }
+  .experience-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   .buttons-container {
     display: flex;
@@ -431,6 +436,9 @@ main {
   }
   .contact-section .title {
     margin-bottom: 8px;
+  }
+  .telephone {
+    display: none;
   }
   .contact-form {
     margin-top: 32px;

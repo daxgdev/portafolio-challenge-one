@@ -1,0 +1,123 @@
+:root {
+  --font-size: 1.188rem;
+  --skew-angle: 3deg;
+}
+
+header {
+  .header-container {
+    padding-inline: 0;
+
+    .dropdown-button {
+      display: none;
+    }
+
+    nav {
+      width: auto;
+      padding: 0;
+      border: none;
+      flex-direction: row;
+      gap: 15px;
+      position: static;
+      background-color: unset;
+      pointer-events: all;
+      transform: translateY(0);
+      opacity: 1;
+
+      span.email {
+        display: block;
+      }
+      a {
+        background-image: var(--gradient);
+        background-size: 0 3px;
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        border-radius: 0;
+        transition: 200ms ease background-size;
+      }
+      a:hover {
+        background-color: unset;
+        background-size: 100% 3px;
+      }
+    }
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+main {
+  .hero-section {
+    max-width: 1300px;
+    padding: 60px 0 90px;
+    align-items: center;
+
+    .photo-container {
+      min-width: 350px;
+      min-height: 350px;
+    }
+
+    .container > .title {
+      font-size: 3.25rem;
+    }
+  }
+
+  .skills-section,
+  .hobbies-section {
+    padding-block: 130px;
+  }
+  .skills,
+  .hobbies {
+    display: flex;
+    justify-content: space-between;
+  }
+  .skill,
+  .hobbie {
+    width: 200px;
+    height: 200px;
+    flex-grow: 1;
+  }
+
+  .education-item-logo {
+    height: 250px;
+  }
+  .education-item-logo > img {
+    width: 200px;
+    height: 120px;
+  }
+
+  .experience-item {
+    display: flex;    
+    gap: 32px;
+  }
+  .experience-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .experience-item-preview {
+    max-width: unset;
+    width: 780px;
+    height: 430px;    
+  }
+  .experience-info-container {
+    align-self: center;
+  }
+
+  .contact-section {
+    padding-top: 130px;
+  }
+  .contact-section > .container {
+    display: flex;
+    gap: 32px;
+  }
+  .telephone {
+    width: 40%;
+    height: 830px;
+    display: block;
+  }
+  .form-container {
+    flex-grow: 1;
+  }
+  .contact-form {
+    margin-top: 16px;
+  }
+}
