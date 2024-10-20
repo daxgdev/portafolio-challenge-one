@@ -28,6 +28,29 @@ const $form = $('.contact-form')
 const $formButton = $('.contact-form > .send-form')
 let messageContent = []
 
+const formResult = (result) => {
+  if (result === true) {
+    $formButton.textContent = 'Enviado'
+    $formButton.classList.add('success')
+    $form.reset()
+
+    setTimeout(() => {
+      $formButton.removeAttribute('disabled')
+      $formButton.textContent = 'Enviar mensaje'
+      $formButton.classList.remove('success')
+    }, 2500)
+  } else {
+    $formButton.textContent = 'Ocurrió un error'
+    $formButton.classList.add('error')
+
+    setTimeout(() => {
+      $formButton.removeAttribute('disabled')
+      $formButton.textContent = 'Enviar mensaje'
+      $formButton.classList.remove('error')
+    }, 2500)
+  }
+}
+
 const validate = (type) => {
   const $input = document.querySelector(`#${type}`)
   const $error = $input.nextElementSibling
@@ -46,7 +69,7 @@ const validate = (type) => {
   }
 }
 
-$form.onsubmit = (e) => {
+$form.onsubmit = async (e) => {
   e.preventDefault()
   messageContent = []
 
@@ -60,33 +83,22 @@ $form.onsubmit = (e) => {
     $formButton.textContent = 'Enviando...'
     messageContent = Object.fromEntries(messageContent)
 
-    fetch('https://formsubmit.co/ajax/faniel5431@gmail.com', {
+    fetch('https://formspree.io/f/xvgoojwj', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
         Accept: 'application/json'
       },
       body: JSON.stringify(messageContent)
     })
-      .then(() => {
-        $formButton.textContent = 'Enviado'
-        $formButton.classList.add('success')
-
-        setTimeout(() => {
-          $formButton.removeAttribute('disabled')
-          $formButton.textContent = 'Enviar mensaje'
-          $formButton.classList.remove('success')
-        }, 2500)
+      .then((response) => {
+        if (response.ok) {
+          formResult(true)
+        } else {
+          formResult(false)
+        }
       })
       .catch(() => {
-        $formButton.textContent = 'Ocurrió un error'
-        $formButton.classList.add('error')
-
-        setTimeout(() => {
-          $formButton.removeAttribute('disabled')
-          $formButton.textContent = 'Enviar mensaje'
-          $formButton.classList.remove('error')
-        }, 2500)
+        formResult(false)
       })
   }
 }
